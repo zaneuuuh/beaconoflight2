@@ -1,68 +1,41 @@
-/* Global Styles */
-body {
-    background-color: #121212;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-/* Header */
-header {
-    background-color: #1E1E1E;
+/* Navigation Styling */
+#nav-bar {
+    text-align: center;
     padding: 15px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
+    background: linear-gradient(to right, #FFD700, #FFA500); /* Gradient effect */
 }
 
-/* Navigation Bar */
-nav {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-}
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    padding: 10px 20px;
-    display: inline-block;
-}
-nav a:hover {
-    background-color: #555;
-}
-
-/* Main Content */
-main {
-    padding: 20px;
-    text-align: center;
-}
-
-/* Buttons */
-.button-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    max-width: 600px;
-    margin: auto;
-}
-button {
-    background-color: #007BFF;
-    border: none;
-    color: white;
-    padding: 15px;
-    font-size: 16px;
+/* Main Navigation Buttons */
+#nav-bar button {
+    background-color: #FFA500; /* Orange background */
+    border: 2px solid #FFD700; /* Gold border */
+    color: #fff;
+    padding: 12px 20px;
+    margin: 5px;
+    font-size: 18px;
     cursor: pointer;
-    width: 100%;
-}
-button:hover {
-    background-color: #0056b3;
+    border-radius: 8px;
+    transition: 0.3s;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #1E1E1E;
-    margin-top: 20px;
+/* Hover Effect */
+#nav-bar button:hover {
+    background-color: #FFD700;
+    color: black;
+}
+
+/* Selected Topic Highlight */
+#nav-bar button.active {
+    background-color: #FFD700 !important;
+    color: black !important;
+}
+
+/* Ensure the main navigation (Home, Blog, About, Contact) is visually separate */
+#nav-bar button:nth-child(-n+4) {
+    background-color: #0044CC; /* Blue for main buttons */
+    border: 2px solid #FFD700;
+}
+
+#nav-bar button:nth-child(-n+4):hover {
+    background-color: #003399;
 }

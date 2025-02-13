@@ -1,127 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beacon of Light</title>
-    <style>
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        
-        /* NAVIGATION MENU */
-        .navbar {
-            background-color: #333;
-            padding: 10px;
-        }
-        .navbar button {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .navbar button:hover {
-            background-color: #0056b3;
-        }
+<div id="nav-container"></div>
 
-        /* SEPARATION LINE */
-        .separator {
-            margin: 20px auto;
-            width: 80%;
-            height: 2px;
-            background-color: #444;
-        }
+<script>
+    // Load shared navigation dynamically
+    fetch("nav.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("nav-container").innerHTML = data;
+        })
+        .then(() => {
+            // Highlight the current page button after navigation is loaded
+            const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
+            if (currentPage) {
+                highlightSelectedTopic(currentPage);
+            }
+        });
+</script>
 
-        /* 8-BUTTON TOPIC GRID */
-        .button-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            max-width: 600px;
-            margin: 20px auto;
-        }
-        .topic-button {
-            background-color: #FFD700;
-            color: black;
-            border: none;
-            padding: 15px;
-            font-size: 16px;
-            cursor: pointer;
-            width: 100%;
-            border-radius: 5px;
-        }
-        .topic-button:hover {
-            background-color: #FFC107;
-        }
-
-        /* CONTENT DISPLAY */
-        #content {
-            margin-top: 20px;
-            font-size: 18px;
-        }
-
-        /* FOOTER */
-        footer {
-            margin-top: 50px;
-            font-size: 14px;
-            padding: 10px;
-            background-color: #1E1E1E;
-        }
-    </style>
-    <script>
-        function loadContent(topic) {
-            const contentDiv = document.getElementById("content");
-            contentDiv.innerHTML = `<h2>Loading content for ${topic}...</h2>`;
-            
-            setTimeout(() => {
-                contentDiv.innerHTML = `<h2>Welcome to ${topic}</h2><p>Explore the insights and knowledge within this topic.</p>`;
-            }, 500);
-        }
-    </script>
-</head>
-<body>
-
-    <h1>Welcome to Beacon of Light</h1>
-
-    <!-- MAIN NAVIGATION MENU -->
-    <div class="navbar">
-        <button onclick="loadContent('home')">Home</button>
-        <button onclick="loadContent('blog')">Blog</button>
-        <button onclick="loadContent('about')">About</button>
-        <button onclick="loadContent('contact')">Contact</button>
-    </div>
-
-    <!-- SEPARATION LINE -->
-    <div class="separator"></div>
-
-    <!-- 8 BUTTON GRID -->
-    <div class="button-grid">
-        <button class="topic-button" onclick="loadContent('topic1')">Topic 1</button>
-        <button class="topic-button" onclick="loadContent('topic2')">Topic 2</button>
-        <button class="topic-button" onclick="loadContent('topic3')">Topic 3</button>
-        <button class="topic-button" onclick="loadContent('topic4')">Topic 4</button>
-        <button class="topic-button" onclick="loadContent('topic5')">Topic 5</button>
-        <button class="topic-button" onclick="loadContent('topic6')">Topic 6</button>
-        <button class="topic-button" onclick="loadContent('topic7')">Topic 7</button>
-        <button class="topic-button" onclick="loadContent('topic8')">Topic 8</button>
-    </div>
-
-    <div id="content">
-        <p>Welcome to Beacon of Light</p>
-    </div>
-
-    <footer>
-        © 2025 Beacon of Light - All Rights Reserved
-    </footer>
-
-</body>
-</html>
+<div id="content">
+    <p>Welcome to Beacon of Light</p>
+</div>
