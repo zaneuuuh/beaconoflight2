@@ -10,29 +10,71 @@
             color: #ffffff;
             font-family: Arial, sans-serif;
             text-align: center;
+            margin: 0;
+            padding: 0;
         }
-        nav {
-            margin: 20px 0;
+        
+        /* NAVIGATION MENU */
+        .navbar {
+            background-color: #333;
+            padding: 10px;
         }
-        nav button {
+        .navbar button {
             background-color: #007BFF;
             color: white;
             border: none;
             padding: 10px 20px;
             margin: 5px;
-            cursor: pointer;
             font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
         }
-        nav button:hover {
+        .navbar button:hover {
             background-color: #0056b3;
         }
+
+        /* SEPARATION LINE */
+        .separator {
+            margin: 20px auto;
+            width: 80%;
+            height: 2px;
+            background-color: #444;
+        }
+
+        /* 8-BUTTON TOPIC GRID */
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .topic-button {
+            background-color: #FFD700;
+            color: black;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+        }
+        .topic-button:hover {
+            background-color: #FFC107;
+        }
+
+        /* CONTENT DISPLAY */
         #content {
             margin-top: 20px;
             font-size: 18px;
         }
+
+        /* FOOTER */
         footer {
             margin-top: 50px;
             font-size: 14px;
+            padding: 10px;
+            background-color: #1E1E1E;
         }
     </style>
     <script>
@@ -50,16 +92,28 @@
 
     <h1>Welcome to Beacon of Light</h1>
 
-    <nav>
+    <!-- MAIN NAVIGATION MENU -->
+    <div class="navbar">
         <button onclick="loadContent('home')">Home</button>
         <button onclick="loadContent('blog')">Blog</button>
         <button onclick="loadContent('about')">About</button>
         <button onclick="loadContent('contact')">Contact</button>
-        <button onclick="loadContent('topic1')">Topic 1</button>
-        <button onclick="loadContent('topic2')">Topic 2</button>
-        <button onclick="loadContent('topic3')">Topic 3</button>
-        <button onclick="loadContent('topic4')">Topic 4</button>
-    </nav>
+    </div>
+
+    <!-- SEPARATION LINE -->
+    <div class="separator"></div>
+
+    <!-- 8 BUTTON GRID -->
+    <div class="button-grid">
+        <button class="topic-button" onclick="loadContent('topic1')">Topic 1</button>
+        <button class="topic-button" onclick="loadContent('topic2')">Topic 2</button>
+        <button class="topic-button" onclick="loadContent('topic3')">Topic 3</button>
+        <button class="topic-button" onclick="loadContent('topic4')">Topic 4</button>
+        <button class="topic-button" onclick="loadContent('topic5')">Topic 5</button>
+        <button class="topic-button" onclick="loadContent('topic6')">Topic 6</button>
+        <button class="topic-button" onclick="loadContent('topic7')">Topic 7</button>
+        <button class="topic-button" onclick="loadContent('topic8')">Topic 8</button>
+    </div>
 
     <div id="content">
         <p>Welcome to Beacon of Light</p>
