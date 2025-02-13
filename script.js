@@ -1,37 +1,48 @@
-<<<<<<< HEAD
-function playFrequency(hz) {
-    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    const oscillator = audioCtx.createOscillator();
-    oscillator.type = "sine";
-    oscillator.frequency.setValueAtTime(hz, audioCtx.currentTime);
-    oscillator.connect(audioCtx.destination);
-    oscillator.start();
-    setTimeout(() => oscillator.stop(), 5 * 1000); // Stops after 5 seconds
+/* Global Styles */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
-=======
-// UNIVERSAL SEARCH SYSTEM FOR HOME, ABOUT, BLOG, AND CONTACT
-document.addEventListener("DOMContentLoaded", function () {
-    const searchInput = document.querySelector(".search-input");
-    const contentItems = document.querySelectorAll(".content-item");
-    const showAllButton = document.querySelector(".show-all");
 
-    if (searchInput) {
-        searchInput.addEventListener("input", function () {
-            const searchText = searchInput.value.toLowerCase();
-            contentItems.forEach(item => {
-                const text = item.textContent.toLowerCase();
-                item.style.display = text.includes(searchText) ? "block" : "none";
-            });
-        });
-    }
+/* Header */
+header {
+    background-color: #1E1E1E;
+    padding: 15px;
+    font-size: 24px;
+    font-weight: bold;
+}
 
-    if (showAllButton) {
-        showAllButton.addEventListener("click", function () {
-            contentItems.forEach(item => {
-                item.style.display = "block";
-            });
-            searchInput.value = "";
-        });
-    }
-});
->>>>>>> origin/main
+/* Navigation Bar */
+nav {
+    padding: 10px;
+    background-color: #333;
+}
+nav button {
+    color: #ffffff;
+    background-color: #007BFF;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+nav button:hover {
+    background-color: #0056b3;
+}
+
+/* Main Content */
+#content {
+    padding: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #1E1E1E;
+    margin-top: 20px;
+}
