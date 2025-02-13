@@ -1,33 +1,27 @@
-name: 🚀 Auto-Deploy Website
-
+name: Auto-Generate Homepage
 on:
-  push:
-    branches:
-      - main
   schedule:
-    - cron: "0 0 * * *"  # Runs once a day
+    - cron: '0 0 * * *'  # Runs daily at midnight UTC
+  workflow_dispatch:  # Allows manual triggering
 
 jobs:
-  deploy:
+  generate:
     runs-on: ubuntu-latest
     steps:
-      - name: 📥 Checkout Repository
-        uses: actions/checkout@v3
-
-      - name: ⚡ Set Up Python
-        uses: actions/setup-python@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          python-version: '3.9'
-
-      - name: 🔄 Auto-Generate Pages
+          node-version: '18'
+      - name: Install dependencies
+        run: npm install
+      - name: Generate AI content
+        run: node generate_ai.mjs
+      - name: Commit and push changes
         run: |
-          pip install requests openai
-          python generate_pages.py
-
-      - name: 📂 Commit Changes
-        run: |
-          git config --global user.name "GitHub Actions Bot"
-          git config --global user.email "github-actions@github.com"
-          git add --all
-          git commit -m "🚀 Auto-updating pages"
-          git push origin main
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "🔄 Automated AI content update"
+          git push
