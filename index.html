@@ -4,33 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beacon of Light</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        nav button:hover {
+            background-color: #0056b3;
+        }
+        #content {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        footer {
+            margin-top: 50px;
+            font-size: 14px;
+        }
+    </style>
+    <script>
+        function loadContent(topic) {
+            const contentDiv = document.getElementById("content");
+            contentDiv.innerHTML = `<h2>Loading content for ${topic}...</h2>`;
+            
+            setTimeout(() => {
+                contentDiv.innerHTML = `<h2>Welcome to ${topic}</h2><p>Explore the insights and knowledge within this topic.</p>`;
+            }, 500);
+        }
+    </script>
 </head>
 <body>
 
-<header>
     <h1>Welcome to Beacon of Light</h1>
-</header>
 
-<nav>
-    <button onclick="loadContent('home')">Home</button>
-    <button onclick="loadContent('blog')">Blog</button>
-    <button onclick="loadContent('about')">About</button>
-    <button onclick="loadContent('contact')">Contact</button>
-    <button onclick="loadContent('topic1')">Topic 1</button>
-    <button onclick="loadContent('topic2')">Topic 2</button>
-    <button onclick="loadContent('topic3')">Topic 3</button>
-    <button onclick="loadContent('topic4')">Topic 4</button>
-</nav>
+    <nav>
+        <button onclick="loadContent('home')">Home</button>
+        <button onclick="loadContent('blog')">Blog</button>
+        <button onclick="loadContent('about')">About</button>
+        <button onclick="loadContent('contact')">Contact</button>
+        <button onclick="loadContent('topic1')">Topic 1</button>
+        <button onclick="loadContent('topic2')">Topic 2</button>
+        <button onclick="loadContent('topic3')">Topic 3</button>
+        <button onclick="loadContent('topic4')">Topic 4</button>
+    </nav>
 
-<div id="content">
-    <p>Welcome to Beacon of Light</p>
-</div>
+    <div id="content">
+        <p>Welcome to Beacon of Light</p>
+    </div>
 
-<footer>
-    <p>© 2025 Beacon of Light - All Rights Reserved</p>
-</footer>
+    <footer>
+        © 2025 Beacon of Light - All Rights Reserved
+    </footer>
 
 </body>
 </html>
