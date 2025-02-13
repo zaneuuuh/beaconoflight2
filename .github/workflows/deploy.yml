@@ -1,35 +1,11 @@
-name: 🚀 Auto-Deploy GitHub Pages
-
-on:
-  push:
-    branches:
-      - main  # Deploys when changes are pushed to the main branch
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-
-      - name: Upload website files
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: ./
-
-      - name: Deploy 🚀
-        id: deployment
-        uses: actions/deploy-pages@v2
-name: 🚀 Auto-Deploy to GitHub Pages
+name: 🚀 Auto-Deploy Website
 
 on:
   push:
     branches:
       - main
+  schedule:
+    - cron: "0 0 * * *"  # Runs once a day
 
 jobs:
   deploy:
@@ -38,15 +14,20 @@ jobs:
       - name: 📥 Checkout Repository
         uses: actions/checkout@v3
 
-      - name: ⚡ Set Up Node.js
-        uses: actions/setup-node@v3
+      - name: ⚡ Set Up Python
+        uses: actions/setup-python@v3
         with:
-          node-version: '18'
+          python-version: '3.9'
 
-      - name: 📂 Build & Deploy
+      - name: 🔄 Auto-Generate Pages
+        run: |
+          pip install requests openai
+          python generate_pages.py
+
+      - name: 📂 Commit Changes
         run: |
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "github-actions@github.com"
           git add --all
-          git commit -m "🚀 Auto-deploying website changes"
+          git commit -m "🚀 Auto-updating pages"
           git push origin main

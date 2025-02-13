@@ -3,36 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{pageTitle}}</title>
+    <title>{{ PAGE_TITLE }}</title>
     <link rel="stylesheet" href="style.css">
-    <script src="universal-script.js" defer></script>
 </head>
 <body>
+    <header>
+        <h1>{{ HEADER_TITLE }}</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="creative.html">Creative Zone</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<!-- 🌟 Navigation Bar -->
-<header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+    <main>
+        {{ CONTENT }}
+    </main>
 
-<!-- 🌟 Search Bar (Only on Blog Pages) -->
-{{searchBar}}
-
-<!-- 🌟 Page Content -->
-<main class="content">
-    {{content}}
-</main>
-
-<!-- 🌟 Footer -->
-<footer>
-    <p>&copy; 2025 BeaconOfLight - All Rights Reserved</p>
-</footer>
-
+    <footer>
+        <p>© 2025 Beacon of Light | All Rights Reserved</p>
+    </footer>
 </body>
 </html>
