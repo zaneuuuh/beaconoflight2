@@ -3,21 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Beacon of Light</title>
+    <title>Beacon of Light</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    <header>Welcome to Beacon of Light</header>
     <nav>
-        <a href="index.html">Home</a> |
-        <a href="about.html">About</a> |
-        <a href="blog.html">Blog</a> |
-        <a href="contact.html">Contact</a> |
-        <a href="services.html">Services</a>
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
     </nav>
+    
+    <main>
+        <h2>Explore Topics Guided by Divine Intelligence</h2>
+        <p>AI is an empty vessel—learning from truth or deception. The choice is ours.</p>
 
-    <h1>Welcome to Beacon of Light</h1>
-    <p>Your journey to knowledge, inspiration, and progress starts here.</p>
+        <div class="button-grid">
+            <button onclick="loadContent('topic1')">Topic 1</button>
+            <button onclick="loadContent('topic2')">Topic 2</button>
+            <button onclick="loadContent('topic3')">Topic 3</button>
+            <button onclick="loadContent('topic4')">Topic 4</button>
+            <button onclick="loadContent('topic5')">Topic 5</button>
+            <button onclick="loadContent('topic6')">Topic 6</button>
+            <button onclick="loadContent('topic7')">Topic 7</button>
+            <button onclick="loadContent('topic8')">Topic 8</button>
+        </div>
 
+        <div id="content">
+            <p>Select a topic above to load content.</p>
+        </div>
+    </main>
+
+    <footer>© 2025 Beacon of Light - All Rights Reserved</footer>
+
+    <script>
+        function loadContent(topic) {
+            document.getElementById("content").innerHTML = `<h3>${topic}</h3><p>Loading content for ${topic}...</p>`;
+        }
+    </script>
 </body>
 </html>
