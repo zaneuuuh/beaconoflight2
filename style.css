@@ -1,0 +1,114 @@
+/* 🌟 Universal Styles (Ensures Dark Background on Every Page) */
+body {
+    background: linear-gradient(180deg, #001f3f, #003366);
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Ensures full height */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 🌟 Navigation Bar */
+nav {
+    background-color: #222;
+    padding: 15px;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+nav ul li {
+    display: inline;
+}
+nav ul li a {
+    color: #ffd700;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #ffcc00;
+    color: #222;
+    font-weight: bold;
+}
+
+/* 🌟 Welcome Section */
+.welcome {
+    padding: 40px 20px;
+    text-align: center;
+}
+.welcome h1 {
+    font-size: 32px;
+    color: #ffd700;
+}
+.welcome p {
+    font-size: 18px;
+}
+
+/* 🌟 10-Button System */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+.button-container button {
+    background: #444;
+    color: #ffd700;
+    border: 2px solid #ffd700;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.button-container button:hover {
+    background: #ffcc00;
+    color: #222;
+}
+
+/* 🌟 Blog Section */
+.blog-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+.blog-post {
+    background: #222;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ffd700;
+}
+.blog-post h2 {
+    color: #ffd700;
+}
+
+/* 🌟 Footer */
+footer {
+    margin-top: auto;
+    padding: 15px;
+    background-color: #222;
+    color: white;
+    text-align: center;
+}
+footer a {
+    color: #ffd700;
+    text-decoration: none;
+}
+footer a:hover {
+    color: #ffcc00;
+}
