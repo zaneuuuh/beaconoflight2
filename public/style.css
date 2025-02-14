@@ -37,3 +37,39 @@ button {
 button:hover {
     background: orange;
 }
+#chat-container {
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+#chat-messages {
+    height: 300px;
+    overflow-y: auto;
+    background: #333;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#user-input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    width: 15%;
+    padding: 10px;
+    background: gold;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
