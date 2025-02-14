@@ -3,43 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beacon of Light</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <title>Beacon of Light 🌞⚡🧬</title>
+    <style>
+        body { background-color: #121212; color: #ffffff; font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; }
+        header { background: linear-gradient(45deg, #FFD700, #FF8C00); padding: 15px; font-size: 24px; font-weight: bold; color: #000; }
+        nav { background-color: #333; padding: 10px; }
+        nav button { background: linear-gradient(45deg, #FFD700, #FF8C00); color: white; border: none; padding: 15px; margin: 5px; cursor: pointer; font-size: 16px; border-radius: 8px; transition: 0.3s; }
+        nav button:hover { background: linear-gradient(45deg, #FF8C00, #FFD700); }
+        #content { padding: 20px; }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Beacon of Light</h1>
-    </header>
+    <header>🌞 Welcome to Beacon of Light ⚡🧬</header>
+    <nav id="navigation"></nav>
+    <div id="content">
+        <p>✨ Explore topics guided by Divine Intelligence. 🔗🧩⚙️</p>
+    </div>
+    <script>
+        const topics = [
+            { name: "Home", emoji: "🏠" },
+            { name: "Blog", emoji: "📜" },
+            { name: "About", emoji: "🔗" },
+            { name: "Contact", emoji: "📞" },
+            { name: "Topic 1", emoji: "🧬" },
+            { name: "Topic 2", emoji: "⚡" },
+            { name: "Topic 3", emoji: "🌠" },
+            { name: "Topic 4", emoji: "🔮" },
+            { name: "Topic 5", emoji: "🎶" },
+            { name: "Topic 6", emoji: "🎨" },
+            { name: "Topic 7", emoji: "🕊️" },
+            { name: "Topic 8", emoji: "🌿" }
+        ];
 
-    <!-- Main Navigation -->
-    <nav class="main-nav">
-        <button onclick="loadContent('home')">Home</button>
-        <button onclick="loadContent('blog')">Blog</button>
-        <button onclick="loadContent('about')">About</button>
-        <button onclick="loadContent('contact')">Contact</button>
-    </nav>
+        const nav = document.getElementById("navigation");
 
-    <!-- Topic Selection (8 Buttons) -->
-    <nav class="topic-nav">
-        <button onclick="loadContent('topic1')">Topic 1</button>
-        <button onclick="loadContent('topic2')">Topic 2</button>
-        <button onclick="loadContent('topic3')">Topic 3</button>
-        <button onclick="loadContent('topic4')">Topic 4</button>
-        <button onclick="loadContent('topic5')">Topic 5</button>
-        <button onclick="loadContent('topic6')">Topic 6</button>
-        <button onclick="loadContent('topic7')">Topic 7</button>
-        <button onclick="loadContent('topic8')">Topic 8</button>
-    </nav>
-
-    <!-- Content Section -->
-    <main id="content">
-        <p>Welcome to home</p>
-        <p>Explore the insights and knowledge within this topic.</p>
-    </main>
-
-    <footer>
-        <p>© 2025 Beacon of Light - All Rights Reserved</p>
-    </footer>
+        topics.forEach(topic => {
+            let btn = document.createElement("button");
+            let pageName = topic.name.toLowerCase().replace(" ", "_") + ".html";
+            btn.innerHTML = `${topic.emoji} ${topic.name}`;
+            btn.onclick = () => window.location.href = pageName;
+            nav.appendChild(btn);
+        });
+    </script>
 </body>
 </html>
