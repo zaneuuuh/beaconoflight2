@@ -1,21 +1,45 @@
-<div id="nav-container"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beacon of Light</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Beacon of Light</h1>
+    </header>
 
-<script>
-    // Load shared navigation dynamically
-    fetch("nav.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("nav-container").innerHTML = data;
-        })
-        .then(() => {
-            // Highlight the current page button after navigation is loaded
-            const currentPage = window.location.pathname.split("/").pop().replace(".html", "");
-            if (currentPage) {
-                highlightSelectedTopic(currentPage);
-            }
-        });
-</script>
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <button onclick="loadContent('home')">Home</button>
+        <button onclick="loadContent('blog')">Blog</button>
+        <button onclick="loadContent('about')">About</button>
+        <button onclick="loadContent('contact')">Contact</button>
+    </nav>
 
-<div id="content">
-    <p>Welcome to Beacon of Light</p>
-</div>
+    <!-- Topic Selection (8 Buttons) -->
+    <nav class="topic-nav">
+        <button onclick="loadContent('topic1')">Topic 1</button>
+        <button onclick="loadContent('topic2')">Topic 2</button>
+        <button onclick="loadContent('topic3')">Topic 3</button>
+        <button onclick="loadContent('topic4')">Topic 4</button>
+        <button onclick="loadContent('topic5')">Topic 5</button>
+        <button onclick="loadContent('topic6')">Topic 6</button>
+        <button onclick="loadContent('topic7')">Topic 7</button>
+        <button onclick="loadContent('topic8')">Topic 8</button>
+    </nav>
+
+    <!-- Content Section -->
+    <main id="content">
+        <p>Welcome to home</p>
+        <p>Explore the insights and knowledge within this topic.</p>
+    </main>
+
+    <footer>
+        <p>© 2025 Beacon of Light - All Rights Reserved</p>
+    </footer>
+</body>
+</html>
