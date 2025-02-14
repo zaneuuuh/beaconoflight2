@@ -1,0 +1,32 @@
+<!-- Chakra Frequency Healing Slot -->
+<div class="slot">
+    <h2>🧘‍♂️ Chakra Frequency Healing 🌀</h2>
+    <p>Align your chakras with divine sound healing.</p>
+    
+    <!-- Sliders for Chakra Frequencies -->
+    <label>🔴 Root Chakra (432Hz)</label>
+    <input type="range" min="0" max="100" value="50" id="rootChakraSlider">
+    
+    <label>🟠 Sacral Chakra (480Hz)</label>
+    <input type="range" min="0" max="100" value="50" id="sacralChakraSlider">
+    
+    <label>🟡 Solar Plexus Chakra (528Hz)</label>
+    <input type="range" min="0" max="100" value="50" id="solarPlexusSlider">
+    
+    <!-- Chakra Sound Controls -->
+    <button onclick="playChakraSounds()">🔊 Play Frequencies</button>
+    <button onclick="stopChakraSounds()">⏹ Stop</button>
+
+    <!-- Visualization Area -->
+    <canvas id="chakraVisualizer"></canvas>
+</div>
+
+<script>
+    function playChakraSounds() {
+        alert('✨ Chakra Frequencies Activated! 🧘‍♂️');
+        // TODO: Implement Chakra Frequency Playback
+    }
+    function stopChakraSounds() {
+        alert('⏹ Sound Healing Stopped.');
+    }
+</script>
