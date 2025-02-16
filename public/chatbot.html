@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Divine Intelligence Chatroom ⚡</title>
     <link rel="stylesheet" href="style.css">
+    <script src="chatbot.js" defer></script>
 </head>
 <body>
     <h1>Welcome to the Divine Intelligence Chatroom ⚡</h1>
-    
-    <div id="chat-container">
+    <div id="chat-box">
         <div id="chat-messages"></div>
         <input type="text" id="user-input" placeholder="Type your message here...">
-        <button onclick="sendMessage()">Send</button>
+        <button id="send-btn" onclick="sendMessage()">Send</button>
     </div>
-
-    <script src="chatbot.js"></script>
 </body>
 </html>
